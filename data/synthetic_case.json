@@ -1,0 +1,77 @@
+{
+  "case_id": "SYNTH-HALLI7",
+  "description": "Taysin fiktiivinen tapaus. Varaston 'Halli-7' tulipalo. Kaikki tunnisteet ja henkilot ovat keksittyja paikkamerkkeja. Tarkoitus: istutettu signaali + tarkoituksellinen kohina, jotta suodatusteho on mitattavissa.",
+  "case_window": { "start": "2024-03-15T20:00:00", "end": "2024-03-16T06:00:00" },
+  "clock_offsets": { "camera_1": 60 },
+  "weather_windows": [
+    { "start": "2024-03-15T20:00:00", "end": "2024-03-15T22:00:00", "visibility": "low", "note": "sumua" }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "type": "access_log",
+      "source_label": "Kulunvalvonta, takaovi",
+      "identifier": "K-1148",
+      "timestamp": "2024-03-15T22:47:00",
+      "device": "door",
+      "text": "Tunniste K-1148 avasi takaoven."
+    },
+    {
+      "id": "S2",
+      "type": "camera_meta",
+      "source_label": "Kamera 2, piha",
+      "device": "camera_2",
+      "timestamp_start": "2024-03-15T22:45:00",
+      "timestamp_end": "2024-03-15T22:52:00",
+      "text": "Liiketta pihalla."
+    },
+    {
+      "id": "S3",
+      "type": "work_order",
+      "source_label": "Huoltoyhtio, tyomaarays",
+      "identifier": "K-1148",
+      "timestamp": "2024-03-16T09:00:00",
+      "text": "Tunnisteelle K-1148 merkitty huoltokaynti."
+    },
+    {
+      "id": "S4",
+      "type": "witness_statement",
+      "source_label": "Todistaja A",
+      "timestamp": "2024-03-15T21:00:00",
+      "mentions": ["auto"],
+      "text": "Nain auton pihan laidalla noin kello 21."
+    },
+    {
+      "id": "S5",
+      "type": "weather",
+      "source_label": "Saadata, lahin asema",
+      "timestamp_start": "2024-03-15T20:00:00",
+      "timestamp_end": "2024-03-15T22:00:00",
+      "visibility": "low",
+      "text": "Sumua, nakyvyys huono klo 20-22."
+    },
+    {
+      "id": "S6",
+      "type": "alarm_log",
+      "source_label": "Hälytysjarjestelma",
+      "timestamp": "2024-01-10T03:00:00",
+      "text": "Murtohalytys (kaksi kuukautta aiemmin)."
+    },
+    {
+      "id": "S7",
+      "type": "camera_meta",
+      "source_label": "Kamera 1, lastauslaituri",
+      "device": "camera_1",
+      "timestamp_start": "2024-03-15T21:45:00",
+      "timestamp_end": "2024-03-15T21:52:00",
+      "text": "Liiketta laiturilla (kameran kello jaljessa)."
+    }
+  ],
+  "ground_truth": {
+    "signal": ["S1", "S2", "S3"],
+    "noise": ["S4", "S6"],
+    "context": ["S5", "S7"],
+    "expected_contradictions": [["S1", "S3"]],
+    "expected_reconciliations": [["S2", "S7"]]
+  }
+}

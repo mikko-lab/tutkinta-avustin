@@ -1,0 +1,24 @@
+[project]
+name = "tutkinta-avustin"
+version = "0.1.0"
+description = "Rikostutkinnan jäsennysputki — deterministinen turvakerros + LangGraph-tilakone"
+requires-python = ">=3.11"
+dependencies = [
+    "langgraph>=0.2",
+    "langchain-core>=0.3",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
