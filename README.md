@@ -1,5 +1,8 @@
 # Tutkinta-avustin (konsepti + ajettava ydin)
 
+[![CI](https://github.com/mikko-lab/tutkinta-avustin/actions/workflows/ci.yml/badge.svg)](https://github.com/mikko-lab/tutkinta-avustin/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 Monen agentin jasennysputki rikostutkinnan massa-aineistolle, **deterministisella
 turvakerroksella**. Periaate: *AI jasentaa, deterministinen koodi valvoo, ihminen päättää.*
 
