@@ -2,11 +2,18 @@
 name = "tutkinta-avustin"
 version = "0.1.0"
 description = "Rikostutkinnan jäsennysputki — deterministinen turvakerros + LangGraph-tilakone"
+license = "MIT"
+authors = [
+    {name = "Mikko Tarkiainen"},
+]
 requires-python = ">=3.11"
 dependencies = [
     "langgraph>=0.2",
     "langchain-core>=0.3",
 ]
+
+[project.urls]
+Homepage = "https://github.com/mikko-lab/tutkinta-avustin"
 
 [project.optional-dependencies]
 dev = [
